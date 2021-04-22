@@ -127,9 +127,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-Not supported yet, though as we're highly invested in development of our product which depends on this library we'll do it as soon as possible!
-
-## Development and contribution
 
 ### Demo app
 
