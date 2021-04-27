@@ -33,10 +33,10 @@ RCT_EXPORT_METHOD(confirmSetup:(NSString *)clientSecret cardParams:(NSDictionary
     card.cvc = [RCTConvert NSString:cardParams[@"cvc"]];
     RCTLogInfo(@"Message: %@", card);
 
-    // Collect the customer's email to know which customer the PaymentMethod belongs to
+    // Collect the customer's email and name to know which customer the PaymentMethod belongs to
     STPPaymentMethodBillingDetails *billingDetails = [[STPPaymentMethodBillingDetails alloc] init];
     billingDetails.email = [RCTConvert NSString:cardParams[@"email"]];
-    billingDetails.address.postalCode = [RCTConvert NSString:cardParams[@"postalCode"]];
+    billingDetails.name = [RCTConvert NSString:cardParams[@"name"]];
     
     // Create SetupIntent confirm parameters with the above
     STPPaymentMethodCardParams *paymentMethodCardParams =[[STPPaymentMethodCardParams alloc] initWithCardSourceParams:card];

@@ -188,8 +188,11 @@ public class StripePaymentsModule extends ReactContextBaseJavaModule {
                 null,
                 null
         );
-        PaymentMethod.BillingDetails billingDetails = (new PaymentMethod.BillingDetails.Builder()).setEmail(cardParams.getString("email")).build();
-        // PaymentMethodCreateParams params = PaymentMethodCreateParams.create(card);
+
+        PaymentMethod.BillingDetails.Builder billingDetailsBuilder = new PaymentMethod.BillingDetails.Builder();
+        billingDetailsBuilder.setName(cardParams.getString("name"));
+        billingDetailsBuilder.setEmail(cardParams.getString("email"));
+        PaymentMethod.BillingDetails billingDetails = billingDetailsBuilder.build();
         if(card == null){
             promise.reject("", "StripeModule.invalidCardParams");
             return;
